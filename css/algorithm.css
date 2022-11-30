@@ -1,0 +1,46 @@
+body {
+    text-align: center;
+    color: #000000;
+    width: 90%;
+}
+a{
+    color: #000000;
+    text-decoration: none;
+}
+div#wapper {
+    width: 100%;
+    text-align: left;
+    min-height: 300px;
+    margin: 0 auto;
+}
+header, footer, nav, aside, section {
+    border: 1px solid #999;
+    margin: 1%;
+    padding: 10px;
+}
+header {
+    height: 50px;
+}
+nav, section, aside {
+    float: left;
+    height: 200px;
+}
+nav {
+    width: auto;
+    height: auto;
+}
+section {
+    width: 60%;
+    height: 1000px;
+    overflow: scroll;
+}
+footer {
+    height: auto;
+    position: relative;
+    clear: both;
+    overflow: scroll;
+}
+article {
+    width: 90%;
+    margin: 20px;
+}

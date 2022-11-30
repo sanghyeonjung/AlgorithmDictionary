@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>알고리즘 홈페이지</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <script>
+      var menu = document.querySelector(".menu");
+
+      menu.addEventListener("click", clickEvent);
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-DOXMLfHhQkvFFp+rWTZwVlPVqdIhpDVYT9csOnHSgWQWPX0v5MCGtjCJbY6ERspU"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="media/logo.svg" alt="Bootstrap"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  알고리즘 종류
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="location.href = 'BFS.html'"
+                      >너비 우선 탐색</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="location.href = 'DFS.html'"
+                      >깊이 우선 탐색</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="location.href = 'DP.html'"
+                      >다이나믹 프로그래밍</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  언어 별 장단점
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="location.href = 'advantagec.html'"
+                      >c++</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="location.href = 'advantagepython.html'"
+                      >python</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  onclick="location.href = 'noobguide.html'"
+                  >초보자 인가요?</a
+                >
+              </li>
+            </ul>
+            <div class="contact">
+              <img onclick = "javascript:newin=window.open('https://github.com/sanghyeonjung')" src="media/깃허브 검은색 아이콘.png" style="margin-right: 15%;" 이거 넣으면 두개 이미지 사이 벌어짐 물론 위에 깃허브 이미지에 넣으면 됨>
+              <img onclick = "javascript:newin=window.open('https://www.instagram.com/working_sanghyun/')" src="media/인스타 검은색 아이콘.png">
+            </div>
+          </div>
+        </div>
+      <!-- </nav>
+      <div id="menu">
+        <ul>
+          <li>
+            <a href="#">알고리즘 종류</a>
+            <ul>
+              <li>
+                <a href="#" onclick="location.href = 'BFS.html'"
+                  >너비 우선 탐색</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="location.href = 'DFS.html'"
+                  >깊이 우선 탐색</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="location.href = 'DP.html'"
+                  >다이나믹 프로그래밍</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="location.href = 'BRUTEFORCE.html'"
+                  >브루트포스 알고리즘</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="location.href = 'GREEDY.html'"
+                  >그리디 알고리즘</a
+                >
+              </li>
+               
+                            알고리즘 종류 페이지에 들어가야 하는것:
+                            티어표기 🏅 플래티넘 · 🥇 골드 · 🥈 실버 · 🥉 브론즈
+                            1.문제 추천
+                            2.참고 사이트(알고리즘 정보 정리 글)
+                            3.예시 코드(내가 짠 코드)
+                            4.간단하게 알고리즘 설명
+                            5.알고리즘 관련 사진
+                            6.이 페이지에서는 실버~골드 문제만 올리기
+                         
+            </ul>
+          </li>
+
+          <li>
+            <a href="#">언어 별 장단점</a>
+            <ul>
+              <li>
+                <a href="#" onclick="location.href = 'advantagec.html'">c++</a>
+              </li>
+              <li>
+                <a href="#" onclick="location.href = 'advantagepython.html'"
+                  >파이썬</a
+                >
+              </li>
+                            언어 별 장단점 페이지에 들어가야 하는것:
+
+                            1. 언어 별로 유리한 상황
+                         
+            </ul>
+          </li>
+
+          <li>
+            <a href="#">초보자 인가요?</a>
+            <ul>
+              <li>
+                <a href="#" onclick="location.href = 'noobguide.html'"
+                  >초보자 알고리즘</a
+                >
+              </li>
+              <li><a href="#">지금 해야 하는 것</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div> -->
+    </header>
+    
+    <br>
+    <!-- 웹페이지의 소개 -->
+    <section id="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>알고리즘 소개</h1>
+              <span class="subheading">Algorithm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br>
+
+    <!-- 이 웹페이지에서의 알고리즘의 종류 -->
+    <section id="algorithm">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-preview">
+              <a href="#" onclick="location.href = 'BFS.html'">
+                <h2 class="post-title">너비 우선 탐색</h2>
+                <h3 class="post-subtitle">
+                  너비 우선 탐색(Breadth First Search)은 그래프에서 가까운 노드부터 우선적으로 탐색하는 알고리즘
+                </h3>
+              </a>
+              <p class="post-meta">
+                Posted by
+                <a href="https://github.com/sanghyeonjung">sanghyun</a>
+                on November 30, 2022
+              </p>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br>
+
+    <!-- 이 웹페이지에서의 알고리즘의 종류 -->
+    <section id="algorithm">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-preview">
+              <a href="#" onclick="location.href = 'DFS.html'">
+                <h2 class="post-title">깊이 우선 탐색</h2>
+                <h3 class="post-subtitle">
+                  깊이 우선 탐색(Depth First Search)은 그래프에서 깊은 부분을 우선적으로 탐색하는 알고리즘
+                </h3>
+              </a>
+              <p class="post-meta">
+                Posted by
+                <a href="https://github.com/sanghyeonjung">sanghyun</a>
+                on November 30, 2022
+              </p>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </section>
+        
+    <!-- 이 웹페이지에서의 알고리즘의 종류 -->
+    <section id="algorithm">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-preview">
+              <a href="#" onclick="location.href = 'DFS.html'">
+                <h2 class="post-title">다이나믹 프로그래밍</h2>
+                <h3 class="post-subtitle">
+                  다이나믹 프로그래밍(Dynamic Programming)은 큰 문제를 작은 문제로 나누어 푸는 알고리즘
+                </h3>
+              </a>
+              <p class="post-meta">
+                Posted by
+                <a href="https://github.com/sanghyeonjung">sanghyun</a>
+                on November 30, 2022
+              </p>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #12c2e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.post-preview > a{
+  color: #000000;
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+#logo {
+  text-align: center;
+  line-height: 100px;
+  font-size: 30px;
+  color: #fff;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+#menu {
+  font: bold 16px "malgun gothic";
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 600px;
+  height: 50px;
+  background: #eef1ff;
+  color: black;
+  line-height: 50px;
+  margin: 0 auto;
+  margin-left: 100px;
+  text-align: center;
+}
+
+#menu > ul > li {
+  float: left;
+  width: 200px;
+  position: relative;
+}
+
+#menu > ul > li > ul {
+  width: 190px;
+  display: none;
+  position: absolute;
+  font-size: 14px;
+  background: #d2daff;
+}
+
+#menu > ul > li:hover > ul {
+  display: block;
+}
+
+#menu > ul > li > ul > li:hover {
+  background: #b1b2ff;
+  transition: ease 1s;
+}
+nav > div > div > div {
+  position: fixed;
+  right: 0;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  padding-left: 60%;
+}
+nav > div > div > div > img {
+  width: 36px;
+  height: 36px;
+}

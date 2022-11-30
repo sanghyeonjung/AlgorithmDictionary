@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DFS</title>
+    <link href="css/algorithm.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="wapper">
+      <!--헤더시작-->
+      <header>
+        <p>DP</p>
+      </header>
+      <!--네비게이션-->
+      <nav>
+        <p>관련 문제</p>
+        <p>Boj 문제</p>
+        <ul>
+          <li>
+            <a href="https://www.acmicpc.net/problem/2748"
+              >🥉브론즈1 2748번 피보나치 수 2</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/1010"
+              >🥈실버5 1010번 다리 놓기</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/14916"
+              >🥈실버5 14916번 거스름돈</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/2839"
+              >🥈실버4 2839번 설탕 배달</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/13699"
+              >🥈실버4 13699번 점화식</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/1003"
+              >🥈실버3 1003번 피보나치 함수</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/1463"
+              >🥈실버3 1463번 1로 만들기</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/1904"
+              >🥈실버3 1904번 01타일</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/2193"
+              >🥈실버3 2193번 이친수</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/2579"
+              >🥈실버3 2579번 계단 오르기</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/9095"
+              >🥈실버3 9095번 1,2,3 더하기</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/9491"
+              >🥈실버3 9461번 파도반 수열</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/11726"
+              >🥈실버3 11726번 2 x N 타일링</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/11727"
+              >🥈실버3 11727번 2 x N 타일링 2</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/1912"
+              >🥈실버2 1912번 연속합</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/11053"
+              >🥈실버2 11053번 가장 긴 증가하는 부분 수열</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/1149"
+              >🥈실버1 1149번 RGB거리</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/1302"
+              >🥈실버1 2302번 극장 좌석</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/2591"
+              >🥇골드5 2591번 숫자카드</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/2666"
+              >🥇골드5 2666번 벽장문의 이동</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/12865"
+              >🥇골드5 12865번 평범한 배낭</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/20500"
+              >🥇골드5 20500번 Ezreal 여눈부터 가네 ㅈㅈ</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/25343"
+              >🥇골드5 25343번 최장 최장 증가 부분 수열</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/2560"
+              >🥇골드3 2560번 짚신벌레</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/11025"
+              >🏅플레5 11025번 요세푸스 문제 3</a
+            >
+          </li>
+          <li>
+            <a href="https://www.acmicpc.net/problem/21779"
+              >🏅플레4 21779번 Aerobatics - 1</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!--콘텐츠부분-->
+      <section>
+        <p>🥇골드5 20500번 Ezreal 여눈부터 가네 ㅈㅈ의 예시코드</p>
+        <p>
+          <a href="https://www.acmicpc.net/problem/20500"
+            >https://www.acmicpc.net/problem/20500</a
+          >
+        </p>
+        <article>
+          <div
+            class="colorscripter-code"
+            style="
+              color: #f0f0f0;
+              font-family: Consolas, 'Liberation Mono', Menlo, Courier,
+                monospace !important;
+              position: relative !important;
+              overflow: auto;
+            "
+          >
+            <table
+              class="colorscripter-code-table"
+              style="
+                margin: 0;
+                padding: 0;
+                border: none;
+                background-color: #272727;
+                border-radius: 4px;
+              "
+              cellspacing="0"
+              cellpadding="0"
+            >
+              <tr>
+                <td style="padding: 6px; border-right: 2px solid #4f4f4f">
+                  <div
+                    style="
+                      margin: 0;
+                      padding: 0;
+                      word-break: normal;
+                      text-align: right;
+                      color: #aaa;
+                      font-family: Consolas, 'Liberation Mono', Menlo, Courier,
+                        monospace !important;
+                      line-height: 130%;
+                    "
+                  >
+                    <div style="line-height: 130%">1</div>
+                    <div style="line-height: 130%">2</div>
+                    <div style="line-height: 130%">3</div>
+                    <div style="line-height: 130%">4</div>
+                    <div style="line-height: 130%">5</div>
+                    <div style="line-height: 130%">6</div>
+                    <div style="line-height: 130%">7</div>
+                    <div style="line-height: 130%">8</div>
+                    <div style="line-height: 130%">9</div>
+                    <div style="line-height: 130%">10</div>
+                    <div style="line-height: 130%">11</div>
+                    <div style="line-height: 130%">12</div>
+                    <div style="line-height: 130%">13</div>
+                    <div style="line-height: 130%">14</div>
+                    <div style="line-height: 130%">15</div>
+                    <div style="line-height: 130%">16</div>
+                    <div style="line-height: 130%">17</div>
+                    <div style="line-height: 130%">18</div>
+                    <div style="line-height: 130%">19</div>
+                    <div style="line-height: 130%">20</div>
+                    <div style="line-height: 130%">21</div>
+                    <div style="line-height: 130%">22</div>
+                    <div style="line-height: 130%">23</div>
+                    <div style="line-height: 130%">24</div>
+                    <div style="line-height: 130%">25</div>
+                    <div style="line-height: 130%">26</div>
+                    <div style="line-height: 130%">27</div>
+                    <div style="line-height: 130%">28</div>
+                    <div style="line-height: 130%">29</div>
+                    <div style="line-height: 130%">30</div>
+                    <div style="line-height: 130%">31</div>
+                  </div>
+                </td>
+                <td style="padding: 6px 0; text-align: left">
+                  <div
+                    style="
+                      margin: 0;
+                      padding: 0;
+                      color: #f0f0f0;
+                      font-family: Consolas, 'Liberation Mono', Menlo, Courier,
+                        monospace !important;
+                      line-height: 130%;
+                    "
+                  >
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      <span style="color: #0086b3">#include</span
+                      ><span style="color: #ff3399">&lt;</span>stdio.h<span
+                        style="color: #aaffaa"
+                      ></span
+                      ><span style="color: #ff3399">&gt;</span>
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      <span style="color: #0086b3">#include</span
+                      ><span style="color: #ff3399">&lt;</span>iostream<span
+                        style="color: #aaffaa"
+                      ></span
+                      ><span style="color: #ff3399">&gt;</span>
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      <span style="color: #0086b3">#include</span
+                      ><span style="color: #ff3399">&lt;</span>set<span
+                        style="color: #aaffaa"
+                      ></span
+                      ><span style="color: #ff3399">&gt;</span>
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      <span style="color: #0086b3">#include</span
+                      ><span style="color: #ff3399">&lt;</span>sstream<span
+                        style="color: #aaffaa"
+                      ></span
+                      ><span style="color: #ff3399">&gt;</span>
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      <span style="color: #ff3399">using</span>&nbsp;<span
+                        style="color: #ff3399"
+                        >namespace</span
+                      >&nbsp;<span style="color: #4be6fa">std</span>;
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      <span style="color: #4be6fa">long</span>&nbsp;<span
+                        style="color: #4be6fa"
+                        >long</span
+                      >&nbsp;<span style="color: #4be6fa">int</span
+                      >&nbsp;fibo[<span style="color: #c10aff">1516</span>];
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      <span style="color: #4be6fa">int</span>&nbsp;a&nbsp;<span
+                        style="color: #aaffaa"
+                      ></span
+                      ><span style="color: #ff3399">=</span>&nbsp;<span
+                        style="color: #c10aff"
+                        >0</span
+                      >;
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      <span style="color: #4be6fa">int</span
+                      >&nbsp;cnt&nbsp;<span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">=</span>&nbsp;<span
+                        style="color: #c10aff"
+                        >0</span
+                      >;
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      <span style="color: #4be6fa">int</span>&nbsp;main()
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      {
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #4be6fa"
+                        >cin</span
+                      >&nbsp;<span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">&gt;</span
+                      ><span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">&gt;</span>&nbsp;a;
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;fibo[<span style="color: #c10aff"
+                        >1</span
+                      >]&nbsp;<span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">=</span>&nbsp;<span
+                        style="color: #c10aff"
+                        >0</span
+                      >;
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;fibo[<span style="color: #c10aff"
+                        >2</span
+                      >]&nbsp;<span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">=</span>&nbsp;<span
+                        style="color: #c10aff"
+                        >1</span
+                      >;
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;fibo[<span style="color: #c10aff"
+                        >3</span
+                      >]&nbsp;<span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">=</span>&nbsp;<span
+                        style="color: #c10aff"
+                        >1</span
+                      >;
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #4be6fa"
+                        >long</span
+                      >&nbsp;<span style="color: #4be6fa">long</span>&nbsp;<span
+                        style="color: #4be6fa"
+                        >int</span
+                      >&nbsp;sum&nbsp;<span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">=</span>&nbsp;<span
+                        style="color: #c10aff"
+                        >2</span
+                      >;
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff3399"
+                        >for</span
+                      >&nbsp;(<span style="color: #4be6fa">int</span
+                      >&nbsp;k&nbsp;<span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">=</span>&nbsp;<span
+                        style="color: #c10aff"
+                        >4</span
+                      >;&nbsp;k&nbsp;<span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">&lt;</span
+                      ><span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">=</span>&nbsp;a;&nbsp;k<span
+                        style="color: #aaffaa"
+                      ></span
+                      ><span style="color: #ff3399">+</span
+                      ><span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">+</span>)
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;{
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum&nbsp;%<span
+                        style="color: #aaffaa"
+                      ></span
+                      ><span style="color: #ff3399">=</span>&nbsp;<span
+                        style="color: #c10aff"
+                        >1000000007</span
+                      >;
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        style="color: #ff3399"
+                        >if</span
+                      >&nbsp;(k&nbsp;%&nbsp;<span style="color: #c10aff">2</span
+                      >&nbsp;<span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">=</span
+                      ><span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">=</span>&nbsp;<span
+                        style="color: #c10aff"
+                        >0</span
+                      >)
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fibo[k]&nbsp;<span
+                        style="color: #aaffaa"
+                      ></span
+                      ><span style="color: #ff3399">=</span>&nbsp;sum&nbsp;<span
+                        style="color: #aaffaa"
+                      ></span
+                      ><span style="color: #ff3399">+</span>&nbsp;<span
+                        style="color: #c10aff"
+                        >1</span
+                      >;
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                        style="color: #ff3399"
+                        >else</span
+                      >
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fibo[k]&nbsp;<span
+                        style="color: #aaffaa"
+                      ></span
+                      ><span style="color: #ff3399">=</span>&nbsp;sum;
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum&nbsp;<span
+                        style="color: #aaffaa"
+                      ></span
+                      ><span style="color: #ff3399">+</span
+                      ><span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">=</span>&nbsp;fibo[k];
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;}
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #4be6fa"
+                        >cout</span
+                      >&nbsp;<span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">&lt;</span
+                      ><span style="color: #aaffaa"></span
+                      ><span style="color: #ff3399">&lt;</span>&nbsp;fibo[a];
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      }
+                    </div>
+                    <div
+                      style="
+                        padding: 0 6px;
+                        white-space: pre;
+                        line-height: 130%;
+                      "
+                    >
+                      &nbsp;
+                    </div>
+                  </div>
+                </td>
+                <td style="vertical-align: bottom; padding: 0 2px 4px 0">
+                  <a
+                    href="http://colorscripter.com/info#e"
+                    target="_blank"
+                    style="text-decoration: none; color: white"
+                    ><span
+                      style="
+                        font-size: 9px;
+                        word-break: normal;
+                        background-color: #4f4f4f;
+                        color: white;
+                        border-radius: 10px;
+                        padding: 1px;
+                      "
+                      >cs</span
+                    ></a
+                  >
+                </td>
+              </tr>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <h1>다이나믹 프로그래밍(DP, Dynamic-programming)</h1>
+
+        <h2>dp의 개념</h2>
+        <p>
+          다이나믹 프로그래밍은 큰 문제를 작은 문제로 나누어 푸는
+          알고리즘입니다.
+        </p>
+        <p>
+          작은 문제를 풀고, 그 결과를 저장해두었다가, 큰 문제를 풀 때 다시
+          사용하는 방식입니다.
+        </p>
+
+        <br />
+
+        <h2>dp의 특징</h2>
+        <p>다이나믹 프로그래밍은 다음과 같은 특징을 가집니다.</p>
+        <ul>
+          <li>큰 문제를 작은 문제로 나눌 수 있어야 합니다.</li>
+          <li>
+            작은 문제에서 구한 정답은 그것을 포함하는 큰 문제에서도 동일합니다.
+          </li>
+        </ul>
+
+        <h2>dp의 활용</h2>
+        <p>다이나믹 프로그래밍은 다음과 같은 문제에 활용됩니다.</p>
+        <ul>
+          <li>최적화 문제</li>
+          <li>최단 경로 문제</li>
+          <li>포함-배제 원리</li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
